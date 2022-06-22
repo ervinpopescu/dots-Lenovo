@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/ervin/www/src/mine/dots/ || exit
+cd /home/ervin/www/src/mine/dots-Lenovo || exit
 
 sed -i '/<!DOCTYPE html>/,/<\/html>/d' README.md
 tree -aH "" -I __pycache__ -I .git >>README.md

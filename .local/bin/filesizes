@@ -1,0 +1,13 @@
+#!/bin/bash
+
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -h|--help) echo -en "Usage: filesizes [-f] <directory>/<file>"; shift; exit 0;;
+        # -d) [[ "$(file -b $2)" == "directory" ]] && target=$2 ;shift;;
+        -f) target=$2; shift;;
+        *) echo "Unknown parameter passed: $1"; exit 1 ;;
+    esac
+    shift
+done
+
+du -ahd1 $target 2>/dev/null | sort -h

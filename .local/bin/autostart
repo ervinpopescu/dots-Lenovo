@@ -1,0 +1,44 @@
+#!/bin/sh
+
+## load X11 defaults
+# xrandr --output eDP-1 --scale 0.8
+xrdb -merge ~/.config/X11/Xresources
+
+# ## gestures
+/home/ervin/.local/bin/libinput-gestures-start &
+
+## "daemons"
+xmousepasteblock &
+alttab -w 1 -d 2 -i 120x80 -t 120x80 -bg "#1e1d2d" -fg "#d9e0ee" -frame "#ddb6f2" -bw 5 -inact "#1e1d2d" -bc "#000000" -bw 0 &
+gnome-keyring-daemon --start &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/home/ervin/.local/bin/spotify-notification &
+/home/ervin/.local/bin/battery-notification &
+/home/ervin/.local/bin/autohide.py &
+# /usr/lib/kdeconnectd &
+
+## wallpaper
+# pkill -KILL wallpaper
+# pkill -KILL sleep
+# /home/ervin/.local/bin/wallpaper &
+nitrogen --set-zoom-fill /home/ervin/www/src/mine/dots/wallpaper.png
+
+## lockscreen
+xset s 600 &
+xss-lock -- betterlockscreen -l dimblur &
+
+## various apps
+# /home/ervin/.config/conky/start_qtile.sh -n &
+yes | /home/ervin/.local/bin/rmshit.py &
+firefox &
+alacritty &
+
+## systray
+nm-applet &
+pa-applet --disable-key-grabbing --disable-notifications &
+blueman-applet &
+flameshot &
+# kdeconnect-indicator &
+
+## compositor
+picom &

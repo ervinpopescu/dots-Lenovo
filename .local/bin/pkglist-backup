@@ -1,0 +1,6 @@
+#!/bin/sh
+
+pacman -Qqe > /home/ervin/.local/bin/pkgs 
+chown ervin:ervin /home/ervin/.local/bin/pkgs
+[ -f /home/ervin/www/src/mine/dots/pkgs ] && rm /home/ervin/www/src/mine/dots/pkgs
+ln /home/ervin/.local/bin/pkgs /home/ervin/www/src/mine/dots/pkgs

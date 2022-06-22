@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ "$(pamixer --get-mute)" == "false" ]]
+then
+	pamixer -m
+	dunstify -a "changeVolume" -u low -I "/usr/share/icons/Papirus-Dark/22x22/actions/audio-volume-muted.svg" -r "991049" "Volume muted"
+else
+        pamixer -u
+	dunstify -a "changeVolume" -u low -I "/usr/share/icons/Papirus-Dark/22x22/actions/audio-volume-high.svg" -r "991049" "Volume unmuted"
+fi

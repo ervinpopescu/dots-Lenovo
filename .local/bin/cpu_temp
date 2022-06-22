@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sensors coretemp-isa-0000 | grep Core | tr -s " " | cut -d " " -f 3 | tr "\n" " "
+

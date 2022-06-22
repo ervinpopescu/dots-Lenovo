@@ -1,0 +1,6 @@
+#!/bin/sh
+
+uptime="$(/home/ervin/.local/bin/uptime.sh)"
+network="$(/home/ervin/.local/bin/network_text)"
+
+printf "%s|%s" "$uptime" "$network"

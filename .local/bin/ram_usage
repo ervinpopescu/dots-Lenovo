@@ -1,0 +1,16 @@
+#!/bin/bash
+
+top -n 1 -b -c\
+  |grep "$1"\
+  | awk '
+  {
+    sum+=$6
+  }
+  END {
+    if (sum < 999)    
+      printf "%.2f%s", sum, "KiB";
+    if (sum/1000 < 99)
+      printf "%.2f%s", sum/1000, "MiB";
+    if (sum/1000/1000 < 1000)
+      printf "%.2f%s", sum/1000/1000, "GiB";  
+  }'

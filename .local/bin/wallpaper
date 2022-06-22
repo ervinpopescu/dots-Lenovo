@@ -1,0 +1,136 @@
+#!/bin/bash
+
+while true
+do
+  random="$(find ~/Pictures/Wallpapers/rand/ -maxdepth 1 -type f|shuf -n 1)" 
+  nitrogen  --set-zoom-fill "$random"
+  betterlockscreen -u "$random" --fx dimblur
+  sleep 10800
+done
+
+# #Requires graphicsmagick and feh
+
+# #
+# #Make sure to add 'kill $(pgrep -f path/to/script);' to your startup script before 'path/to/script &' to avoid weird flickering
+
+# ### Variables ###
+# #Change these to your liking
+# morningtime=6
+# daytime=9
+# eveningtime=17
+# nighttime=20
+# morning='/home/ervin/Pictures/Wallpapers/island/island-morning.webp'
+# day='/home/ervin/Pictures/Wallpapers/island/island-day.webp'
+# evening='/home/ervin/Pictures/Wallpapers/island/island-evening.webp'
+# night='/home/ervin/Pictures/Wallpapers/island/island-night.webp'
+# #Don't touch these
+# basecheck='true'
+# morningcheck='false'
+# daycheck='false'
+# eveningcheck='false'
+# nightcheck='false'
+
+# ### Functions ###
+# checkmorning() {
+# 	for i in {100..0}; do
+# 		gm convert "$morning" -fill "#000" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+# 	done
+# 	morningcheck='false'
+# 	daycheck='true'
+# 	basecheck='false'
+# }
+
+# checkday() {
+# 	for i in {100..0}; do
+# 		gm convert "$day" -fill "#000" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+# 	done
+# 	daycheck='false'
+# 	eveningcheck='true'
+# 	basecheck='false'
+# }
+
+# checkevening() {
+# 	for i in {100..0}; do
+# 		gm convert "$evening" -fill "#000" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+# 	done
+# 	eveningcheck='false'
+# 	nightcheck='true'
+# 	basecheck='false'
+# }
+
+# checknight() {
+# 	for i in {100..0}; do
+# 		gm convert "$night" -fill "#000" -colorize "$i" jpg:- | feh --bg-scale --no-fehbg -
+# 	done
+# 	nightcheck='false'
+# 	morningcheck='true'
+# 	basecheck='false'
+# }
+
+# transmorning() {
+# 	for i in {100..0}; do
+# 		gm composite "$night" -dissolve "$i" "$morning" jpg:- | feh --bg-scale --no-fehbg -
+# 	done
+# 	morningcheck='false'
+# 	daycheck='true'
+# }
+
+# transday() {
+# 	for i in {100..0}; do
+# 		gm composite "$morning" -dissolve "$i" "$day" jpg:- | feh --bg-scale --no-fehbg -
+# 	done
+# 	daycheck='false'
+# 	eveningcheck='true'
+# }
+
+# transevening() {
+# 	for i in {100..0}; do
+# 		gm composite "$day" -dissolve "$i" "$evening" jpg:- | feh --bg-scale --no-fehbg -
+# 	done
+# 	eveningcheck='false'
+# 	nightcheck='true'
+# }
+
+# transnight() {
+# 	for i in {100..0}; do
+# 		gm composite "$evening" -dissolve "$i" "$night" jpg:- | feh --bg-scale --no-fehbg -
+# 	done
+# 	nightcheck='false'
+# 	morningcheck='true'
+# }
+
+# ### Script ###
+# while true; do
+# 	#Check time each loop
+# 	time=$(date +%H)
+# 	#Set wallpaper based on time on first run
+# 	if [ "$basecheck" = "true" ]; then
+# 		if [ "$time" -ge "$morningtime" ] && [ "$time" -lt "$daytime" ]; then
+# 			checkmorning
+#       betterlockscreen -u /home/ervin/Pictures/Wallpapers/island/island-morning.webp
+# 		elif [ "$time" -ge "$daytime" ] && [ "$time" -lt "$eveningtime" ]; then
+# 			checkday
+#       betterlockscreen -u /home/ervin/Pictures/Wallpapers/island/island-day.webp
+# 		elif [ "$time" -ge "$eveningtime" ] && [ "$time" -lt "$nighttime" ]; then
+# 			checkevening
+#       betterlockscreen -u /home/ervin/Pictures/Wallpapers/island/island-evening.webp
+# 		elif ([ "$time" -ge "$nighttime" ] && [ "$time" -le 23 ]) || ([ "$time" -ge 00 ] && [ "$time" -lt "$morningtime" ]); then
+# 			checknight
+#       betterlockscreen -u /home/ervin/Pictures/Wallpapers/island/island-night.webp
+# 		fi
+# 	#Transition wallpaper based on time
+# 	elif [ "$time" -ge "$morningtime" ] && [ "$time" -lt "$daytime" ] && [ "$morningcheck" = "true" ]; then
+# 		transmorning
+#     betterlockscreen -u /home/ervin/Pictures/Wallpapers/island/island-morning.webp
+# 	elif [ "$time" -ge "$daytime" ] && [ "$time" -lt "$eveningtime" ] && [ "$daycheck" = "true" ]; then
+# 		transday
+#     betterlockscreen -u /home/ervin/Pictures/Wallpapers/island/island-day.webp
+# 	elif [ "$time" -ge "$eveningtime" ] && [ "$time" -lt "$nighttime" ] && [ "$eveningcheck" = "true" ]; then
+# 		transevening
+#     betterlockscreen -u /home/ervin/Pictures/Wallpapers/island/island-evening.webp
+# 	elif ([ "$time" -ge "$nighttime" ] && [ "$time" -le 23 ]) || ([ "$time" -ge 00 ] && [ "$time" -lt "$morningtime" ]) && [ "$nightcheck" = "true" ]; then
+# 		transnight
+#       betterlockscreen -u /home/ervin/Pictures/Wallpapers/island/island-night.webp
+# 	fi
+# 	sleep 60
+# done

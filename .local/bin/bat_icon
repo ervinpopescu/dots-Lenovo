@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+battery_now="$(cat /sys/class/power_supply/BAT1/capacity)"
+if [[ "$(upower -i /org/freedesktop/UPower/devices/line_power_ACAD | grep online | tr -s " " | cut -d" " -f3)" == "yes" ]]
+then
+	printf "%s" "$battery_now%⚡"
+else
+	printf "%s" "$battery_now%"
+fi

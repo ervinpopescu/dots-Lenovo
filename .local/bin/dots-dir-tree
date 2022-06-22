@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd /home/ervin/www/src/mine/dots/ || exit
+
+sed -i '/<!DOCTYPE html>/,/<\/html>/d' README.md
+tree -aH "" -I __pycache__ -I .git >>README.md
+sed -i '/<head>/,/<\/head>/d' README.md
+sed -i 's/h1/h2/g' README.md
+sed -i '/<p class="VERSION">/,/<\/p>/d' README.md
+sed -i '/\<hr\>/d' README.md
+sed -i '/<br><br><p>/d' README.md
+sed -i '/<a href=""><\/a><br>/d' README.md
+# lvim_plugins="$(grep '\[1\] = ".*"' /home/ervin/.local/bin/lvim_plugins | awk '{print $3}' | sed 's/,//;s/"//g')"
+# sed -i "/\* added the following plugins:/a ${lvim_plugins//\//\\/}" README.md

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+[ -f /home/ervin/.config/zsh/.zshenv ] && . /home/ervin/.config/zsh/.zshenv

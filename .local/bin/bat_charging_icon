@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+bolt=""
+
+if [[ $(upower -i /org/freedesktop/UPower/devices/line_power_ACAD | grep online | tr -s " " | cut -d" " -f3) == "yes" ]]
+then
+	printf "%s" "$bolt"
+fi

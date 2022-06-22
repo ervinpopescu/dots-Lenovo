@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Lock screen",
+    "exec": "betterlockscreen -l dimblur",
+    "icon": "/usr/share/icons/WhiteSur-dark/actions/32/system-lock-screen.svg"
+  },
+  {
+    "name": "Suspend",
+    "exec": "systemctl -i suspend",
+    "icon": "/usr/share/icons/WhiteSur-dark/actions/32/system-suspend.svg"
+  },
+  {
+    "name": "Logout",
+    "exec": "loginctl terminate-session self",
+    "icon": "/usr/share/icons/WhiteSur-dark/actions/32/system-log-out.svg"
+  },
+  {
+    "name": "Reboot",
+    "exec": "systemctl -i reboot",
+    "icon": "/usr/share/icons/WhiteSur-dark/actions/32/system-reboot.svg"
+  },
+  {
+    "name": "Reboot to Windows",
+    "exec": "/home/ervin/.local/bin/reboot-win",
+    "icon": "/usr/share/icons/WhiteSur-dark/places/symbolic/folder-wine-symbolic.svg"
+  },
+  {
+    "name": "Shutdown",
+    "exec": "systemctl -i poweroff",
+    "icon": "/usr/share/icons/WhiteSur-dark/actions/32/system-shutdown.svg"
+  }
+]

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+git -C /home/ervin/www/src/mine/dots-Lenovo add .
+git -C /home/ervin/www/src/mine/dots-Lenovo commit -m 'daily commit'
+git -C /home/ervin/www/src/mine/dots-Lenovo push

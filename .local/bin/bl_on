@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+bluetoothctl power on
+#bluetoothctl scan on
+#bluetoothctl connect 74:45:CE:15:2B:DD

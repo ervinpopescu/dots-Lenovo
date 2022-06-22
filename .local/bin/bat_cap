@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cat /sys/class/power_supply/BAT1/charge_now /sys/class/power_supply/BAT1/charge_full |\
+tr "\n" " " |\
+awk '{printf "%.0f%", $1/$2*100}'

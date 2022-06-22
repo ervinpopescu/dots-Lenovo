@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# https://github.com/dastorm/volume-notification-dunst/blob/master/volume.sh
+# https://gist.github.com/sebastiencs/5d7227f388d93374cebdf72e783fbd6a
+
+function get_brightness {
+  awk '{printf "%.0f", $1*100/255}' <<< "$(cat /sys/class/backlight/amdgpu_bl0/brightness)"
+}
+
+brightness=$(get_brightness)
+
+function send_notification {
+  icon="/usr/share/icons/Papirus-Dark/symbolic/status/display-brightness-symbolic.svg"
+  # Send the notification
+  dunstify -I "$icon" -a "brightness" -r 5555 -u low \
+  -h int:value:"$brightness" "${brightness}%"
+}
+
+case $1 in
+  up)
+    # increase the backlight by 10%
+    brightnessctl s 10%+
+    send_notification
+    ;;
+  down)
+    # decrease the backlight by 10%
+    if [ "$brightness" -gt 10 ]
+    then
+      brightnessctl s 10%-
+      send_notification
+    fi
+    ;;
+esac

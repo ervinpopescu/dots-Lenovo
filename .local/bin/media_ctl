@@ -1,0 +1,86 @@
+#!/bin/bash
+
+notification-next-back(){
+  adb shell dumpsys notification --noredact\
+  | perl -ne '(/com\.spotify/../NotificationRecord/) && print'\
+  | perl -pe 's/.*(com\.spotify.*)/$1/'\
+  | perl -pe 's/(.*NotificationRecord).*/$1/'\
+  | grep "title\|text"\
+  | perl -nle 'print $1 if /\((.*)\)/'
+}
+
+notification-play-pause(){
+  adb shell dumpsys notification --noredact\
+  | perl -ne '(/com\.spotify/../NotificationRecord/) && print'\
+  | perl -pe 's/.*(com\.spotify.*)/$1/'\
+  | perl -pe 's/(.*NotificationRecord).*/$1/'\
+  | grep "flags=0x6a"
+}
+
+playing="$(playerctl -a metadata | grep 'title\|artist' | awk '{$1="";$2=""}1' | sed '3d;s/^[ \t]*//')"
+
+case "$1" in
+	"next")
+	  if ! [[ "$(pgrep anbox | wc -l)" -gt 1 ]] ;then
+      playerctl -a next
+      dunstify\
+      -a "spotifyNotification"\
+      -I "/usr/share/icons/WhiteSur-dark/actions/24/media-skip-forward.svg"\
+      -u low\
+      -r "263723"\
+      ""
+    else
+      adb shell input keyevent 87
+    fi ;;
+	"previous")
+	  if ! [[ "$(pgrep anbox | wc -l)" -gt 1 ]];then
+      playerctl -a previous
+      dunstify\
+      -a "spotifyNotification"\
+      -I "/usr/share/icons/WhiteSur-dark/actions/24/media-skip-backward.svg"\
+      -u low\
+      -r "263723"\
+      ""
+    else
+      adb shell input keyevent 88
+    fi;;
+	"play-pause")
+  	if ! [[ "$(pgrep anbox | wc -l)" -gt 1 ]];then
+      playerctl play-pause
+      if [[ "$(playerctl -a status | sed -z 's/\n/,/g;s/,$/\n/')" == "Playing" ]];then
+        dunstify\
+          -a "spotifyNotification"\
+          -u low\
+          -r "263723"\
+          "${playing}
+"
+      else
+        dunstify\
+          -a "spotifyNotification"\
+          -u low\
+          -r "263723"\
+          "${playing}
+"
+      fi
+    else
+      adb shell input keyevent 85
+      if [[ "$(notification-play-pause)" != "" ]]
+      then
+        dunstify\
+          -a "spotifyNotification"\
+          -I "/usr/share/icons/Papirus/24x24/apps/Spotify.svg"\
+          -u low\
+          -r "263723"\
+          "$(notification-next-back)
+"
+      else
+        dunstify\
+        -a "spotifyNotification"\
+        -I "/usr/share/icons/Papirus/24x24/apps/Spotify.svg"\
+        -u low\
+        -r "263723"\
+        "$(notification-next-back)
+"
+      fi
+    fi;;
+esac

@@ -1,0 +1,31 @@
+#!/bin/python
+
+# from xdo import Xdo
+from libqtile.command.client import InteractiveCommandClient
+
+c = InteractiveCommandClient()
+
+groups = list(c.groups().keys())
+groups.pop()
+
+count = 0
+
+def_group_layouts = c.get_test_data()
+
+for g in groups:
+    if c.group[g].eval("self.layout.name")[1] == "max":
+        count = count+1
+
+if count is not len(groups):
+    for g in groups:
+        c.group[g].setlayout("max")
+else:
+    for g, l in zip(groups, def_group_layouts):
+        c.group[g].setlayout(l)
+
+# xdo = Xdo()
+# xm = xdo.get_mouse_location().x
+# ym = xdo.get_mouse_location().y
+# c.hide_show_bar()
+# xdo.move_mouse(1366 // 2, 5)
+# xdo.move_mouse(xm,ym)

@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+
+for i in $(exa -aghl -i $2 | sed 1d | awk '{print $1}')
+do
+  echo -e "\033[0;31mfor the inode $i\033[0m";
+  find $1 -inum $i 2>/dev/null
+done

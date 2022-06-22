@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if  [[ "$(bluetoothctl show | grep 'Powered' | awk '{print $2}')" == "yes" ]] ; then
+	bluetoothctl power off
+else
+	bluetoothctl power on
+	bluetoothctl discoverable on
+	if bluetoothctl info | grep -q "Connected: yes"; then
+        device=$(bluetoothctl info | grep "Name" | cut -d " " -f2)
+    fi
+    echo "$device"
+fi

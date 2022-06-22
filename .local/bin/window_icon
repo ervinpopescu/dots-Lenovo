@@ -1,0 +1,3 @@
+#!/bin/bash
+
+fd -i "$(xdotool getactivewindow getwindowclassname)" /usr/share/applications | xargs grep Icon | cut -d"=" -f2 | tr -d "\n"

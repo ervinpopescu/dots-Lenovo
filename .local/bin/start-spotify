@@ -1,0 +1,35 @@
+#!/bin/python
+
+import subprocess
+# from time import sleep
+from libqtile.command.client import InteractiveCommandClient
+
+c = InteractiveCommandClient()
+CurrentGroup = c.group.info()["name"]
+
+# p1 = subprocess.Popen(["pgrep", "anbox"], stdout=subprocess.PIPE)
+# p2 = subprocess.check_output(['wc', '-l'], stdin=p1.stdout)
+# anbox_no = int(p2)
+
+# if anbox_no > 1:
+#     time=10
+# else:
+#     time=60
+
+if CurrentGroup != "media":
+    c.screen.toggle_group("media")
+    c.spawn("glava -r 'mod bars-left'")
+    c.spawn("glava -r 'mod bars-right'")
+    # subprocess.call('dex "$HOME"/.local/share/applications/anbox/anbox-com-spotify-music.desktop', shell=True)
+    subprocess.call('dex /usr/share/applications/spotify-adblock.desktop', shell=True)
+    # sleep(time)
+    # WindowList = c.windows()
+    # SpotifyWinID = next(item for item in WindowList if item["name"] == "Spotify")["id"]
+    c.group['media'].layout.set_ratio(0.8)
+else:
+    c.spawn("glava -r 'mod bars-left'")
+    c.spawn("glava -r 'mod bars-right'")
+    # subprocess.call('dex "$HOME"/.local/share/applications/anbox/anbox-com-spotify-music.desktop', shell=True)
+    subprocess.call('dex /usr/share/applications/spotify-adblock.desktop', shell=True)
+    # sleep(time)
+    c.group['media'].layout.set_ratio(0.8)

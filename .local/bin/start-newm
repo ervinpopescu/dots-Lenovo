@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+SOURCE=${BASH_SOURCE[0]}
+while [ -h "$SOURCE" ]; do
+  DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+  SOURCE=$(readlink "$SOURCE")
+  [[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE
+done
+DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+
+
+LOGDIR="$HOME/.cache"
+mkdir -p $LOGDIR || LOGDIR="/tmp"
+
+pushd $LOGDIR
+if [ -e newm_log_bu1 ]
+    then cp newm_log_bu1 newm_log_bu2
+fi
+if [ -e newm_log ]
+    then cp newm_log newm_log_bu1
+fi
+popd
+
+echo "newm - script dir is $DIR, log dir is $LOGDIR, arguments are $@"
+exec $DIR/.start-newm "$@" > $LOGDIR/newm_log 2>&1

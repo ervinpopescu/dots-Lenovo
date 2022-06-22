@@ -1,0 +1,15 @@
+#!/bin/sh 
+
+# qutebrowser --target window "$1"
+# qtile cmd-obj -o group -f setlayout -a columns 
+# qtile cmd-obj -o group -f focus_back
+
+firefox -P markdown-preview -no-remote -private-window "$1" &
+sleep 0.5
+qtile cmd-obj -o window -f togroup -a coding
+qtile cmd-obj -o screen -f toggle_group -a coding
+# qtile cmd-obj -o window -f toggle_fullscreen
+qtile cmd-obj -o group -f setlayout -a columns
+qtile cmd-obj -o group -f focus_back
+
+

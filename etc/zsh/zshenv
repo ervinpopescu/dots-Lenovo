@@ -1,0 +1,4 @@
+export ZDOTDIR=$HOME/.config/zsh
+[ ! -f /run/user/1000/Xauthority ] && ln -s /var/run/lightdm/ervin/xauthority /run/user/1000/Xauthority
+export CLASSPATH=/usr/lib/jvm/default-runtime/lib/mysql-connector-java.jar:$CLASSPATH
+

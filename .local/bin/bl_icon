@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ "$(bluetoothctl show | grep 'Powered' | awk '{print $2}')" == "yes" ]] && [[ "$(bluetoothctl info)" == "Missing device address argument" ]]; then
+    icon="  "
+elif [[ "$(bluetoothctl show | grep 'Powered' | awk '{print $2}')" == "yes" ]] && [[ "$(bluetoothctl info)" != "Missing device address argument" ]]; then
+        if bluetoothctl info | grep -q "Connected: yes"; then
+        device=$(bluetoothctl info | grep "Name" | cut -d " " -f2)
+        fi
+    icon="  $device"
+else
+    icon="  "
+fi
+
+printf "%s" "$icon"

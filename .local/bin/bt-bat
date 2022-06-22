@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bluetooth-headset-battery-level 60:C5:E6:34:91:EF.1 | awk '{print $NF}'

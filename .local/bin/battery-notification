@@ -1,0 +1,15 @@
+#!/bin/bash
+
+while true; do
+  is_charging="$(cat /sys/class/power_supply/ACAD/online)"
+  perc="$(cat /sys/class/power_supply/BAT1/capacity)"
+  if [[ $perc -le 10 ]] && [[ "$is_charging" == "0" ]];then
+    dunstify\
+        -a "batteryNotification"\
+        -I "/usr/share/icons/Papirus/24x24/panel/battery-low.svg"\
+        -u high\
+        -r "636223"\
+        'charge your laptop'
+  fi
+  sleep 1
+done

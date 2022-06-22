@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for i in {200..255}
+do
+  line="$(cat .config/conky/lean-conky-config/conky_qtile.conf | sed "s/own_window_argb_value = [0-9]*/own_window_argb_value = $i/" | grep own_window_argb_value)" 
+  printf "$line\n"
+  sed -i "s/own_window_argb_value = [0-9]*/own_window_argb_value = $i/" .config/conky/lean-conky-config/conky_qtile.conf
+  ~/.config/conky/lean-conky-config/start_qtile.sh -n
+  sleep 1
+done

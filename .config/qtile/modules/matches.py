@@ -45,6 +45,7 @@ d[group_names[1]] = [
     "google-chrome-beta",
     "Google-chrome-beta",
     "qbittorrent",
+    "transmission-qt",
     "transmission-gtk",
 ]
 d[group_names[2]] = [

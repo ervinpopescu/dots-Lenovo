@@ -112,16 +112,16 @@ def top_widgets():
             **decor
         ),
         widget.Spacer(length=8),
-        widget.GenPollText(
-            update_interval=3600,
-            padding=10,
-            font="CodeNewRoman Nerd Font Mono Bold",
-            fontsize=34,
-            foreground=colors[6],
-            func=lambda: weather(),
-            **decor
-        ),
-        widget.Spacer(length=8),
+        # widget.GenPollText(
+        #     update_interval=3600,
+        #     padding=10,
+        #     font="CodeNewRoman Nerd Font Mono Bold",
+        #     fontsize=34,
+        #     foreground=colors[6],
+        #     func=lambda: weather(),
+        #     **decor
+        # ),
+        # widget.Spacer(length=8),
         widget.MyBattery(
             update_interval=1,
             padding=10,

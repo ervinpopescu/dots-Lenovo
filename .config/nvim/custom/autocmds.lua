@@ -17,14 +17,14 @@ autocmd(
     group = Idgroup
   }
 )
-autocmd(
-  "BufEnter",
-  {
-    pattern = "*",
-    command = "ColorizerAttachToBuffer",
-    group = Idgroup
-  }
-)
+-- autocmd(
+--   "BufEnter",
+--   {
+--     pattern = "*",
+--     command = ":ColorizerAttachToBuffer",
+--     group = Idgroup
+--   }
+-- )
 autocmd(
   "BufEnter",
   {

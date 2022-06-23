@@ -15,15 +15,17 @@
     * ***conky***
         * ~~*stolen*~~
         * \+ fortune cookie 
-    * ***lvim***
+    * ***neovim***
         * mostly default 
         * added some LSP's, formatters and some autocommands
         * added the following plugins:
-            * `catppuccin/nvim`
             * `Pocco81/AutoSave.nvim`
             * `norcalli/nvim-colorizer.lua`
             * `ethanholz/nvim-lastplace`
             * `iamcco/markdown-preview.nvim`
+            * `cappyzawa/trim.nvim`
+            * `prettier/vim-prettier`
+            * `goolord/alpha-nvim`
     * ***nwg-launchers***
         * nwgbar
             * used for powermenu

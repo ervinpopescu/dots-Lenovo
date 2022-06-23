@@ -15,13 +15,15 @@ gnome-keyring-daemon --start &
 /home/ervin/.local/bin/spotify-notification &
 /home/ervin/.local/bin/battery-notification &
 /home/ervin/.local/bin/autohide.py &
+/home/ervin/www/src/cloned/mycroft-core/start-mycroft.sh all &
+dunst &
 # /usr/lib/kdeconnectd &
 
 ## wallpaper
 # pkill -KILL wallpaper
 # pkill -KILL sleep
 # /home/ervin/.local/bin/wallpaper &
-nitrogen --set-zoom-fill /home/ervin/www/src/mine/dots/wallpaper.png
+nitrogen --set-zoom-fill /home/ervin/www/src/mine/dots-Lenovo/wallpaper.png
 
 ## lockscreen
 xset s 600 &

@@ -28,6 +28,7 @@ assert mouse
 assert widget_defaults
 assert extension_defaults
 assert screens
+assert modules.hooks
 
 @hook.subscribe.startup_once
 def autostart():

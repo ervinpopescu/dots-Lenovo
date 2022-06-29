@@ -2,9 +2,9 @@
 
 while true
 do
-  random="$(find ~/Pictures/Wallpapers/rand/ -maxdepth 1 -type f|shuf -n 1)" 
+  random="$(find ~/Pictures/wallpapers -maxdepth 1 -type f|shuf -n 1)"
   nitrogen  --set-zoom-fill "$random"
-  betterlockscreen -u "$random" --fx dimblur
+  betterlockscreen -u "$random" --fx dimblur > /dev/null 2>&1
   sleep 10800
 done
 

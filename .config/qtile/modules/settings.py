@@ -19,6 +19,7 @@ group_names = "coding www social etc settings media".split()
 group_labels = ["", "", "", "", "", ""]
 group_layouts = ["monadwide", "max", "max", "bsp", "bsp", "monadthreecol"]
 
+# qtile.test_data = (group_layouts, qtile.current_screen.top.eval("self.cursor_info"))
 qtile.test_data = group_layouts
 
 # Widgets

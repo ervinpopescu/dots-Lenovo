@@ -1,4 +1,3 @@
 #!/bin/bash
 
-sleep 1
-/home/ervin/.local/bin/lvim /home/ervin/.config/qtile/
+nvim /home/ervin/.config/qtile/

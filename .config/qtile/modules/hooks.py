@@ -1,5 +1,5 @@
 import asyncio
-import psutil
+# import psutil
 from .matches import d
 from libqtile import hook
 

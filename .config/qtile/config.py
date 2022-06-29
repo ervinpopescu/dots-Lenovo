@@ -32,7 +32,7 @@ assert modules.hooks
 
 @hook.subscribe.startup_once
 def autostart():
-    autostart = path.expanduser("~/.local/bin/autostart")
+    autostart = path.expanduser("~/.local/bin/autostart-wl")
     subprocess.call(
         [autostart],
         stdout=subprocess.DEVNULL,

@@ -68,8 +68,9 @@ def top_widgets():
             #     }
         ),
         widget.Spacer(),
-        widget.Systray(
+        widget.StatusNotifier(
             icon_size=55,
+            icon_theme="WhiteSur",
             padding=0),
         widget.Spacer(),
         widget.KeyboardLayout(
@@ -111,7 +112,7 @@ def top_widgets():
             mouse_callbacks={"Button1": weather_popup()},
             **decor
         ),
-        widget.Spacer(length=8),
+        # widget.Spacer(length=8),
         # widget.GenPollText(
         #     update_interval=3600,
         #     padding=10,
@@ -121,7 +122,7 @@ def top_widgets():
         #     func=lambda: weather(),
         #     **decor
         # ),
-        # widget.Spacer(length=8),
+        widget.Spacer(length=8),
         widget.MyBattery(
             update_interval=1,
             padding=10,

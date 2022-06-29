@@ -2,6 +2,13 @@ Idgroup = vim.api.nvim_create_augroup("MyGroup",{clear = true})
 vim.api.nvim_clear_autocmds({group = "MyGroup"})
 local autocmd=vim.api.nvim_create_autocmd
 autocmd(
+  "VimEnter",
+  {
+    pattern = { "*" },
+    command = "ASToggle"
+  }
+)
+autocmd(
   "InsertEnter",
   {
     pattern = { "*" },

@@ -12,7 +12,6 @@ xmousepasteblock &
 alttab -w 1 -d 2 -i 120x80 -t 120x80 -bg "#1e1d2d" -fg "#d9e0ee" -frame "#ddb6f2" -bw 5 -inact "#1e1d2d" -bc "#000000" -bw 0 &
 gnome-keyring-daemon --start &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-/home/ervin/.local/bin/spotify-notification &
 /home/ervin/.local/bin/battery-notification &
 /home/ervin/.local/bin/autohide.py &
 /home/ervin/www/src/cloned/mycroft-core/start-mycroft.sh all &
@@ -20,10 +19,10 @@ dunst &
 # /usr/lib/kdeconnectd &
 
 ## wallpaper
-# pkill -KILL wallpaper
-# pkill -KILL sleep
-# /home/ervin/.local/bin/wallpaper &
-nitrogen --set-zoom-fill /home/ervin/www/src/mine/dots-Lenovo/wallpaper.png
+pkill -KILL wallpaper
+pkill -KILL sleep
+/home/ervin/.local/bin/wallpaper &
+# nitrogen --set-zoom-fill /home/ervin/www/src/mine/dots-Lenovo/wallpaper.png
 
 ## lockscreen
 xset s 600 &
@@ -37,6 +36,7 @@ alacritty &
 
 ## systray
 nm-applet &
+# nm-tray &
 pa-applet --disable-key-grabbing --disable-notifications &
 blueman-applet &
 flameshot &

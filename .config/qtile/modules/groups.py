@@ -1,7 +1,7 @@
 from libqtile.config import DropDown, Group, ScratchPad, Key
 from libqtile.lazy import lazy
-from libqtile.log_utils import logger
-from libqtile import qtile
+# from libqtile.log_utils import logger
+# from libqtile import qtile
 
 from .settings import (
         group_names,

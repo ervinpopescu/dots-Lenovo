@@ -1,5 +1,5 @@
 # export DISPLAY=:0
-export PATH=/home/ervin/.local/bin:/home/ervin/.local/share/gem/ruby/3.0.0/bin:$PATH
+export PATH="/home/ervin/.local/bin:/home/ervin/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 # XDG Base Directory specification
 export XDG_STATE_HOME="$HOME"/.local/state
@@ -7,20 +7,20 @@ export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_DATA_HOME=/home/ervin/.local/share
 export XDG_CACHE_HOME=/home/ervin/.cache
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GOPATH="$XDG_DATA_HOME"/go
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
 export OCTAVE_HISTFILE="$XDG_CACHE_HOME"/octave-hsts
 export OCTAVE_SITE_INITFILE="$XDG_CONFIG_HOME"/octave/octaverc
-export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-export WGETRC="$XDG_CONFIG_HOME"/wgetrc
-export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
-export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export PYTHONSTARTUP="$XDG_CONFIG_HOME"/pythonrc
-export MYSQL_HISTFILE="$XDG_DATA_HOME"/mysql_history
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
-export GOPATH="$XDG_DATA_HOME"/go
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export WGETRC="$XDG_CONFIG_HOME"/wgetrc
 export WINEPREFIX=/mnt/win/wine
-export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 # nvidia, fuck you
 export __NV_PRIME_RENDER_OFFLOAD=1
@@ -85,6 +85,7 @@ alias tty-clock="tty-clock -c -C 7 -f '%a, %d %b'"
 alias u='sudo pacman -Syu'
 alias vim="nvim"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias xbindkeys="xbindkeys -f "$XDG_CONFIG_HOME"/xbindkeys/config"
 
 # checking for tty or not
 if [[ "$(tty | sed -e 's:/dev/::;s/[0-9]//')" == "tty" ]]

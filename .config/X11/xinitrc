@@ -36,14 +36,14 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-xsetroot -solid "#1e1e2e"
-xsetroot -cursor_name left_ptr
-exec vncviewer
+# xsetroot -solid "#1e1e2e"
+# xsetroot -cursor_name left_ptr
+# exec vncviewer
 # exec openbox
 # /home/ervin/.local/bin/autostart &
 # exec alacritty -o "window.dimensions.columns: 52" -o "window.dimensions.lines: 30" -o "window.position.x: 684" -o "window.position.y: 0" & zathura
 # exec zathura
 # exec alacritty
-# exec start-newm -d 
+# exec start-newm -d
 # exec dwm
-# exec qtile start
+exec qtile start -c /home/ervin/.config/qtile-x11/config.py

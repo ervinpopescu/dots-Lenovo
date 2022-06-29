@@ -20,16 +20,10 @@ if CurrentGroup != "media":
     c.screen.toggle_group("media")
     c.spawn("glava -r 'mod bars-left'")
     c.spawn("glava -r 'mod bars-right'")
-    # subprocess.call('dex "$HOME"/.local/share/applications/anbox/anbox-com-spotify-music.desktop', shell=True)
     subprocess.call('dex /usr/share/applications/spotify-adblock.desktop', shell=True)
-    # sleep(time)
-    # WindowList = c.windows()
-    # SpotifyWinID = next(item for item in WindowList if item["name"] == "Spotify")["id"]
     c.group['media'].layout.set_ratio(0.8)
 else:
-    c.spawn("glava -r 'mod bars-left'")
     c.spawn("glava -r 'mod bars-right'")
-    # subprocess.call('dex "$HOME"/.local/share/applications/anbox/anbox-com-spotify-music.desktop', shell=True)
+    c.spawn("glava -r 'mod bars-left'")
     subprocess.call('dex /usr/share/applications/spotify-adblock.desktop', shell=True)
-    # sleep(time)
     c.group['media'].layout.set_ratio(0.8)

@@ -219,7 +219,6 @@ sudo fc-cache -f -v
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/rmshit.py">rmshit.py</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/rofi-power-menu">rofi-power-menu</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/set_max_layout">set_max_layout</a><br>
-	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/spotify-notification">spotify-notification</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/ssd_usage">ssd_usage</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/start-newm">start-newm</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/start-spotify">start-spotify</a><br>
@@ -244,7 +243,7 @@ sudo fc-cache -f -v
 	│   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; └── <a href="/usr/share/fonts/Code%20New%20Roman%20Bold%20Nerd%20Font%20Complete%20Mono.otf">Code New Roman Bold Nerd Font Complete Mono.otf</a><br>
 	└── <a href="/wallpaper.png">wallpaper.png</a><br>
 
-29 directories, 135 files
+29 directories, 134 files
 
 </p>
 </body>

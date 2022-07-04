@@ -65,6 +65,7 @@ alias ll="ls -ghl"
 alias ls='exa --color=auto --icons -aH'
 alias md="mdless"
 alias mysql-workbench='mysql-workbench --configdir="$XDG_DATA_HOME/mysql/workbench"'
+alias ncdu="ncdu --color off"
 alias neo-ru="neo-matrix --color=red --charset=cyrillic -m 'IN SOVIET RUSSIA, COMPUTER PROGRAMS YOU'"
 alias neo="neo-matrix -D"
 alias nf="neofetch"

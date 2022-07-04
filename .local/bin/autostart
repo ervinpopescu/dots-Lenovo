@@ -14,7 +14,6 @@ gnome-keyring-daemon --start &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /home/ervin/.local/bin/battery-notification &
 /home/ervin/.local/bin/autohide.py &
-/home/ervin/www/src/cloned/mycroft-core/start-mycroft.sh all &
 dunst &
 # /usr/lib/kdeconnectd &
 
@@ -31,8 +30,8 @@ xss-lock -- betterlockscreen -l dimblur &
 ## various apps
 # /home/ervin/.config/conky/start_qtile.sh -n &
 yes | /home/ervin/.local/bin/rmshit.py &
-firefox &
-alacritty &
+# firefox &
+# alacritty &
 
 ## systray
 nm-applet &

@@ -15,6 +15,10 @@ gnome-keyring-daemon --start &
 /home/ervin/.local/bin/battery-notification &
 /home/ervin/.local/bin/autohide.py &
 dunst &
+activate-linux -id -s 1.5 -f 'CodeNewRoman Nerd Font Mono Bold' &
+setxkbmap -option "terminate:ctrl_alt_bksp" &
+GDK_BACKEND=x11 ideapad-perf-tray.rb &
+xclickroot -r jgmenu_run &
 # /usr/lib/kdeconnectd &
 
 ## wallpaper

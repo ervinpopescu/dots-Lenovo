@@ -37,10 +37,11 @@ export FZF_DEFAULT_OPTS='--color=bg+:#302D41,bg:#1E1E2E,spinner:#F8BD96,hl:#F28F
 export PAGER='less'
 export MANPAGER='nvim +Man!'
 export BROWSER='firefox'
+export MOZ_ENABLE_WAYLAND=1
 
 # Aliases
 alias SS="sudo systemctl"
-alias alttab='alttab -w 1 -d 2 -i 60x60 -t 60x60 -bg "#1e1e2e" -fg "#d9e0ee" -frame "#ddb6f2" -bw 5 -inact "#1e1d2d" -bc "#000000" -bw 0'
+alias alttab='alttab -w 1 -d 2 -i 120x80 -t 120x80 -bg "#1e1d2d" -fg "#d9e0ee" -frame "#ddb6f2" -bw 5 -inact "#1e1d2d" -bc "#000000" -bw 0'
 alias b="$HOME/.local/bin/"
 alias beep='paplay $BEEP'
 alias birthday="birthday -f ~/.local/share/birthdays -W 7"

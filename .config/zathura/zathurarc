@@ -1,4 +1,5 @@
 set sandbox none
+set font "CodeNewRoman Nerd Font Mono Bold 22"
 set window-height 768
 set window-width 1366
 set statusbar-h-padding 0

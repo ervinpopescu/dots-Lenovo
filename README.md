@@ -175,17 +175,10 @@ sudo fc-cache -f -v
 	│   └── <a href="/.local/bin/">bin</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/all_disk_usage">all_disk_usage</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/anbox-shell">anbox-shell</a><br>
-	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/ascii-images">ascii-images</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/autohide.py">autohide.py</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/autostart">autostart</a><br>
-	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/bat_cap">bat_cap</a><br>
-	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/bat_charging_icon">bat_charging_icon</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/bat_icon">bat_icon</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/battery-notification">battery-notification</a><br>
-	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/bl_ctl">bl_ctl</a><br>
-	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/bl_icon">bl_icon</a><br>
-	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/bl_off">bl_off</a><br>
-	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/bl_on">bl_on</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/brightness_ctl">brightness_ctl</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/bt-bat">bt-bat</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/change_conky_alpha">change_conky_alpha</a><br>
@@ -230,7 +223,6 @@ sudo fc-cache -f -v
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/uptime.sh">uptime.sh</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/vol_ctl">vol_ctl</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/vol_mute">vol_mute</a><br>
-	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/wallpaper">wallpaper</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/window_icon">window_icon</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/window_name">window_name</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/workdays">workdays</a><br>
@@ -243,7 +235,7 @@ sudo fc-cache -f -v
 	│   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; └── <a href="/usr/share/fonts/Code%20New%20Roman%20Bold%20Nerd%20Font%20Complete%20Mono.otf">Code New Roman Bold Nerd Font Complete Mono.otf</a><br>
 	└── <a href="/wallpaper.png">wallpaper.png</a><br>
 
-29 directories, 134 files
+29 directories, 126 files
 
 </p>
 </body>

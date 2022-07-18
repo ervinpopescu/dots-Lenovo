@@ -20,7 +20,7 @@ autocmd(
   "VimLeave",
   {
     pattern = { "*" },
-    command = "set guicursor=a:ver20",
+    command = "set guicursor=a:ver20,a:blinkoff1",
     group = Idgroup
   }
 )

@@ -54,7 +54,7 @@ alias d="$HOME/www/src/mine/dots-Lenovo"
 alias df="df -h -x tmpfs -x devtmpfs -x squashfs"
 alias diff='diff --color=auto'
 alias egrep='egrep --color=auto'
-alias feh="feh -d --edit --scale-down --auto-zoom"
+alias feh="feh -d --edit --scale-down --auto-zoom -e yudit/23"
 alias fgrep='fgrep --color=auto'
 alias gcl='git clone'
 alias gp="git add .; git commit; git push"

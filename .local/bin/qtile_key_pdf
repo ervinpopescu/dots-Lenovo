@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-/home/ervin/.local/bin/qtile_keybinds |  awk '{split($0, a, FS, seps); a[1]=""; for (i=1;i<=NF;i++) printf("%s%s", a[i], seps[i]); print ""}' | sed '2d;s/Desc//' | sed '$apress q to exit\npress Ctrl+r to recolor' | text2pdf -L -c200 -x1000 -y1000 | zathura --mode fullscreen -
+/home/ervin/.local/bin/qtile_keybinds | awk '{split($0, a, FS, seps); for (i=1;i<=NF;i++) printf("%s%s", a[i], seps[i]); print ""}' | sed '2d;s/Desc//;s/mod4/super/;s/mod1/alt/;$apress q to exit\npress Ctrl+r to recolor' | text2pdf -s22 -v20 -L -c500 -x1000 -y1600 | zathura --mode fullscreen -

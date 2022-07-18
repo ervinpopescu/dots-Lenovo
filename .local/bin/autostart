@@ -5,7 +5,7 @@
 xrdb -merge ~/.config/X11/Xresources
 
 # ## gestures
-/home/ervin/.local/bin/libinput-gestures-start &
+# /home/ervin/.local/bin/libinput-gestures-start &
 
 ## "daemons"
 xmousepasteblock &
@@ -15,16 +15,15 @@ gnome-keyring-daemon --start &
 /home/ervin/.local/bin/battery-notification &
 /home/ervin/.local/bin/autohide.py &
 dunst &
-activate-linux -id -s 1.5 -f 'CodeNewRoman Nerd Font Mono Bold' &
+# activate-linux -id -s 1.5 -f 'CodeNewRoman Nerd Font Mono Bold' &
 setxkbmap -option "terminate:ctrl_alt_bksp" &
 GDK_BACKEND=x11 ideapad-perf-tray.rb &
 xclickroot -r jgmenu_run &
 # /usr/lib/kdeconnectd &
 
 ## wallpaper
-pkill -KILL wallpaper
-pkill -KILL sleep
-/home/ervin/.local/bin/wallpaper &
+pkill change_wallpaper
+/home/ervin/.local/bin/change_wallpaper &
 # nitrogen --set-zoom-fill /home/ervin/www/src/mine/dots-Lenovo/wallpaper.png
 
 ## lockscreen
@@ -46,4 +45,5 @@ flameshot &
 # kdeconnect-indicator &
 
 ## compositor
-picom &
+picom --config /home/ervin/.config/picom.conf &
+# /home/ervin/.local/bin/picom-restart

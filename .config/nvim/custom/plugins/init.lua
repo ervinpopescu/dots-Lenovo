@@ -1,6 +1,36 @@
 return {
+   ["xiyaowong/nvim-transparent"] = {
+      config =function ()
+         require("transparent").setup({
+            enable = true, -- boolean: enable transparent
+            extra_groups = { -- table/string: additional groups that should be cleared
+             -- In particular, when you set it to 'all', that means all available groups
 
-  ["Pocco81/AutoSave.nvim"] = {
+             -- example of akinsho/nvim-bufferline.lua
+            "BufferLineTabClose",
+            "BufferlineBufferSelected",
+            "BufferLineFill",
+            "BufferLineBackground",
+            "BufferLineSeparator",
+            "BufferLineIndicatorSelected",
+            },
+            exclude = {}, -- table: groups you don't want to clear
+      })
+   end
+   },
+   ["catppuccin/nvim"] = {
+      config = function ()
+         local present, catppuccin = pcall(require("catppuccin"))
+         if present then
+            catppuccin.setup(
+            {
+               transparent_background = true
+            }
+            )
+         end
+      end
+   },
+   ["Pocco81/AutoSave.nvim"] = {
     config = function()
       local present, autosave = pcall(require("autosave"))
       if present then

@@ -1,5 +1,9 @@
-#!/bin/zsh
+#!/bin/bash
 
+if [ "x$1" == "x-h" ] || [ "x$1" == "x" ]; then
+  printf "usage: find_hardlink [directory to search in] [target directory]"
+  exit 0
+fi
 
 for i in $(exa -aghl -i $2 | sed 1d | awk '{print $1}')
 do

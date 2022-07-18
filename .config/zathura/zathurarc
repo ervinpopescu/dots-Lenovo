@@ -5,7 +5,7 @@ set window-width 1366
 set statusbar-h-padding 0
 set guioptions none
 set statusbar-v-padding 0
-set page-padding 1
+set page-padding 0
 set selection-clipboard clipboard
 set first-page-column 1:1
 map u scroll full-up

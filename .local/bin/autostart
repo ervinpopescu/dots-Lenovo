@@ -22,9 +22,9 @@ xclickroot -r jgmenu_run &
 # /usr/lib/kdeconnectd &
 
 ## wallpaper
-pkill change_wallpaper
-/home/ervin/.local/bin/change_wallpaper &
-# nitrogen --set-zoom-fill /home/ervin/www/src/mine/dots-Lenovo/wallpaper.png
+# pkill change_wallpaper
+# /home/ervin/.local/bin/change_wallpaper &
+nitrogen --set-zoom-fill /home/ervin/Pictures/wallpapers/Carina_Nebula.png &
 
 ## lockscreen
 xset s 600 &

@@ -189,7 +189,6 @@ sudo fc-cache -f -v
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/display_center">display_center</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/dot-backup">dot-backup</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/dots-dir-tree">dots-dir-tree</a><br>
-	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/editqtile">editqtile</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/filesizes">filesizes</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/find_hardlink">find_hardlink</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/get_birthdays_from_csv">get_birthdays_from_csv</a><br>
@@ -219,7 +218,6 @@ sudo fc-cache -f -v
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/suspend-on">suspend-on</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/tray.py">tray.py</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/tsize">tsize</a><br>
-	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/update">update</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/uptime.sh">uptime.sh</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/vol_ctl">vol_ctl</a><br>
 	│   &nbsp;&nbsp;&nbsp; ├── <a href="/.local/bin/vol_mute">vol_mute</a><br>
@@ -235,7 +233,7 @@ sudo fc-cache -f -v
 	│   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; └── <a href="/usr/share/fonts/Code%20New%20Roman%20Bold%20Nerd%20Font%20Complete%20Mono.otf">Code New Roman Bold Nerd Font Complete Mono.otf</a><br>
 	└── <a href="/wallpaper.png">wallpaper.png</a><br>
 
-29 directories, 126 files
+29 directories, 124 files
 
 </p>
 </body>

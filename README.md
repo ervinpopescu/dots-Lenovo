@@ -119,13 +119,6 @@ sudo fc-cache -f -v
 	│   │   &nbsp;&nbsp;&nbsp; └── <a href="/.config/nwg-launchers/nwggrid/terminal">terminal</a><br>
 	│   ├── <a href="/.config/qtile/">qtile</a><br>
 	│   │   ├── <a href="/.config/qtile/config.py">config.py</a><br>
-	│   │   ├── <a href="/.config/qtile/images/">images</a><br>
-	│   │   │   ├── <a href="/.config/qtile/images/mod1.png">mod1.png</a><br>
-	│   │   │   ├── <a href="/.config/qtile/images/mod4-control.png">mod4-control.png</a><br>
-	│   │   │   ├── <a href="/.config/qtile/images/mod4-mod1.png">mod4-mod1.png</a><br>
-	│   │   │   ├── <a href="/.config/qtile/images/mod4.png">mod4.png</a><br>
-	│   │   │   ├── <a href="/.config/qtile/images/mod4-shift.png">mod4-shift.png</a><br>
-	│   │   │   └── <a href="/.config/qtile/images/no_modifier.png">no_modifier.png</a><br>
 	│   │   └── <a href="/.config/qtile/modules/">modules</a><br>
 	│   │   &nbsp;&nbsp;&nbsp; ├── <a href="/.config/qtile/modules/colors.py">colors.py</a><br>
 	│   │   &nbsp;&nbsp;&nbsp; ├── <a href="/.config/qtile/modules/groups.py">groups.py</a><br>
@@ -233,7 +226,7 @@ sudo fc-cache -f -v
 	│   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; └── <a href="/usr/share/fonts/Code%20New%20Roman%20Bold%20Nerd%20Font%20Complete%20Mono.otf">Code New Roman Bold Nerd Font Complete Mono.otf</a><br>
 	└── <a href="/wallpaper.png">wallpaper.png</a><br>
 
-29 directories, 124 files
+28 directories, 118 files
 
 </p>
 </body>

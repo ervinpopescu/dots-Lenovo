@@ -1,7 +1,7 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
 
-from .settings import mod, alt, terminal, menu
+from .settings import mod, alt, terminal, menu, update
 
 @lazy.function
 def window_to_prev_group(qtile):
@@ -54,25 +54,25 @@ keys = [
     # Layouts
     Key(
         [mod, "control"], "Right",
-        lazy.layout.grow_right().when(layout="bsp" or "columns"),
-        lazy.layout.grow().when(layout="monadwide" or "monadtall" or "monadthreecol"),
+        lazy.layout.grow_right().when(layout=["bsp","columns"]),
+        lazy.layout.grow().when(layout=["monadwide","monadtall", "monadthreecol"]),
         lazy.layout.increase_ratio().when(layout="spiral"),
     ),
     Key(
         [mod, "control"], "Left",
-        lazy.layout.shrink().when(layout="monadwide" or "monadtall" or "monadthreecol"),
-        lazy.layout.grow_left().when(layout="bsp" or "columns"),
+        lazy.layout.shrink().when(layout=["monadwide","monadtall" or "monadthreecol"]),
+        lazy.layout.grow_left().when(layout=["bsp","columns"]),
         lazy.layout.decrease_ratio().when(layout="spiral"),
     ),
     Key(
         [mod, "control"], "Up",
-        lazy.layout.grow().when(layout="monadwide" or "monadtall" or "monadthreecol"),
-        lazy.layout.grow_up().when(layout="bsp" or "columns"),
+        lazy.layout.grow().when(layout=["monadwide","monadtall","monadthreecol"]),
+        lazy.layout.grow_up().when(layout=["bsp","columns"]),
     ),
     Key(
         [mod, "control"], "Down",
-        lazy.layout.shrink().when(layout="monadwide" or "monadtall" or "monadthreecol"),
-        lazy.layout.grow_down().when(layout="bsp" or "columns"),
+        lazy.layout.shrink().when(layout=["monadwide","monadtall","monadthreecol"]),
+        lazy.layout.grow_down().when(layout=["bsp","columns"]),
     ),
 
     # Layout managing
@@ -111,6 +111,8 @@ keys = [
         lazy.shutdown()),
     Key([mod, "shift"], "a",
         lazy.hide_show_bar()),
+    Key([mod,"shift"], "c",
+        lazy.widget["widgetbox"].toggle()),
     Key([mod, "shift"], "m",
         lazy.spawn("/home/ervin/.local/bin/set_max_layout")),
 
@@ -136,7 +138,7 @@ keys = [
     Key([mod], "t",
         lazy.group["scratchpad"].dropdown_toggle("term")),
     Key([mod], "u",
-        lazy.group["scratchpad"].dropdown_toggle("up")),
+        lazy.spawn(update)),
     Key([mod], "s",
         lazy.spawn("gnome-control-center")),
     Key([mod], "k",
@@ -151,6 +153,8 @@ keys = [
         lazy.spawn("/home/ervin/.config/conky/start_qtile.sh -n")),
     Key(["control", "shift"], "Escape",
         lazy.spawn("alacritty -e htop")),
+    Key([mod], "p",
+            lazy.spawn("jgmenu_run")),
 
     # DE keys
     Key([mod, "shift"], "s",
@@ -163,11 +167,11 @@ keys = [
         lazy.spawn("/home/ervin/.local/bin/vol_ctl -5%")),
     Key([], "XF86AudioRaiseVolume",
         lazy.spawn("/home/ervin/.local/bin/vol_ctl +5%")),
-    Key([], "XF86AudioPrev",
+    Key(["shift"], "XF86AudioLowerVolume",
         lazy.spawn("/home/ervin/.local/bin/media_ctl previous")),
-    Key([], "XF86AudioPlay",
+    Key([], "XF86AudioMicMute",
         lazy.spawn("/home/ervin/.local/bin/media_ctl play-pause")),
-    Key([], "XF86AudioNext",
+    Key(["shift"], "XF86AudioRaiseVolume",
         lazy.spawn("/home/ervin/.local/bin/media_ctl next")),
     Key([], "XF86MonBrightnessUp",
         lazy.spawn("/home/ervin/.local/bin/brightness_ctl up")),

@@ -1,7 +1,16 @@
+from os import path
+import subprocess
 import asyncio
-# import psutil
 from .matches import d
 from libqtile import hook
+
+@hook.subscribe.startup_once
+def autostart():
+    autostart = path.expanduser("~/.local/bin/autostart")
+    subprocess.call(
+        [autostart],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.STDOUT)
 
 @hook.subscribe.client_new
 def assign_app_group(client):
@@ -20,6 +29,11 @@ async def move_client(client):
     await asyncio.sleep(0.1)
     if client.window.get_wm_class()[0] == "spotify":
         client.togroup("media")
+
+@hook.subscribe.client_new
+def bring_to_top(client):
+    if "_NET_WM_WINDOW_TYPE_NOTIFICATION" in client.window.get_wm_type():
+        client.window.center()
 
 # noswallow = [
 #     "qutebrowser",

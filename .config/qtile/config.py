@@ -30,14 +30,6 @@ assert extension_defaults
 assert screens
 assert modules.hooks
 
-@hook.subscribe.startup_once
-def autostart():
-    autostart = path.expanduser("~/.local/bin/autostart-wl")
-    subprocess.call(
-        [autostart],
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.STDOUT)
-
 follow_mouse_focus = True
 bring_front_click = True
 cursor_warp = True

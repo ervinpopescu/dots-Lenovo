@@ -9,6 +9,11 @@ layouts = [
     layout.Max(  # type: ignore
         margin=layout_defaults["margin"]
     ),
+    layout.Zoomy(  # type: ignore
+        columnwidth=500,
+        property_small="1.0",
+        margin=layout_defaults["margin"],
+    ),
     layout.MonadTall(  # type: ignore
         max_ratio=0.95,
         min_ratio=0.01,
@@ -39,6 +44,7 @@ layouts = [
 floating_layout = layout.Floating(  # type: ignore
     float_rules=[
         *layout.Floating.default_float_rules,  # type: ignore
+        Match(wm_class="flameshot"),
         Match(wm_class="confirmreset"),  # gitk
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk

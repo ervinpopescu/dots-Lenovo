@@ -10,9 +10,9 @@ from .colors import *
 # Keys
 mod = "mod4"
 alt = "mod1"
-menu = "rofi -show drun -terminal alacritty -show-icons"
+menu = "rofi -show drun -terminal alacritty -show-icons".split()
 terminal = "alacritty"
-update = ["alacritty", "-o", "font.size=13", "-e", "/home/ervin/.local/bin/update"]
+update = "alacritty -e yay -Syyu --noconfirm".split()
 
 # Groups
 group_names = "coding www social etc settings media".split()
@@ -28,7 +28,7 @@ qtile.test_data = group_layouts
 colors = catppuccin
 # colors = random
 
-margin_size = 10
+margin_size = 7
 
 layout_defaults = dict(
     margin=margin_size,

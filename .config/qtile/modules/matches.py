@@ -2,6 +2,7 @@ from .settings import group_names
 
 d = {}
 d[group_names[0]] = [
+    "notable",
     "sun-awt-X11-XFramePeer",
     "MATLAB R2019b - academic use",
     "terminator",

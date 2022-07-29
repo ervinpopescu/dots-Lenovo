@@ -1,6 +1,6 @@
 import subprocess
 import requests
-from libqtile import qtile
+# from libqtile import qtile
 # from libqtile.log_utils import logger
 from libqtile.lazy import lazy
 from qtile_extras.popup.toolkit import PopupAbsoluteLayout, PopupText
@@ -47,7 +47,3 @@ def weather_popup(qtile):
 
 def no_text(text):
     return ""
-
-def reload():
-    qtile.cmd_reload_config()
-    qtile.cmd_spawn("/home/ervin/.local/bin/change_wallpaper")
